@@ -1,6 +1,6 @@
 import express, { response } from 'express'
 import cors from "cors" //for fixing cors error
-
+import "./database.js"
 const app = express()
 const port = process.env.PORT || 5001
 const todos = []
