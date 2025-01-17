@@ -2,7 +2,7 @@
 // G4keG0fh9RoFlZvV
 import mongoose from "mongoose"
 
-const mongodbUri = "mongodb+srv://talha-admin:pQGzX5GPpV8uOaH9@cluster0.0o81x.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const mongodbUri = process.env.MONGO_URI
 
 console.log("Talha");
 
