@@ -2,14 +2,13 @@
 // G4keG0fh9RoFlZvV
 import mongoose from "mongoose"
 
-const mongodbUri = process.env.MONGO_URI
-
-console.log("Talha");
-
+const mongodbUri = process.env.MONGO_URI;
 
 const connectDB = async ()=>{
     try{
-        await mongoose.connect(mongodbUri);
+        await mongoose.connect(mongodbUri , {
+            dbName : "my-todo-db"
+        });
         console.log(`mongo db connected`);
         
         mongoose.connection.on(
