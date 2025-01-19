@@ -25,7 +25,7 @@ app.get('/api/v1/todos', async (req, res) => {
     ).sort({ _id: -1 })
 
     const message = !todos.lenght ? "todos empty" : "get all todos successfully!"
-    res.send({ data: todos, message: message });
+    res.send({message: message ,data: todos});
 
   } catch (error) {
     response.status(500).send("Internal server error")
@@ -43,7 +43,6 @@ app.post('/api/v1/todo', async (req, res) => {
     const result = await Todo.create(obj)
     // todos.push(obj)
 
-    // todos.push(obj)
     res.send({ data: result, message: "todo added successfully!" })
   } catch (error) {
     res.status(500).send("Internal server error")
@@ -59,7 +58,7 @@ app.patch('/api/v1/todo/:id', async (req, res) => {
   )
   if (result) {
     res.status(201).send({
-      message: "todo updated successfully",
+      message: "todo updated successfully!",
       data: result
     })
   }
@@ -75,7 +74,7 @@ app.delete('/api/v1/todo/:id',async (req, res) => {
   const result = await Todo.findByIdAndDelete(id)
   if (result) {
     res.status(201).send({
-      message: "todo deleted successfully",
+      message: "todo deleted successfully!",
     })
   }
   else {
