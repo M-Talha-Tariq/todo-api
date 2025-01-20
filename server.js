@@ -12,7 +12,7 @@ const port = process.env.PORT || 5001
 app.use(express.json())// to convert body into JSON
 
 app.use(
-  cors({ origin: ["http://localhost:5173", "https://E-commerce-by-talha.surge.sh"] }),
+  cors({ origin: ["http://localhost:5173", "https://todo-api.surge.sh"] }),
 );
 // for get all todo
 app.get('/api/v1/todos', async (req, res) => {
