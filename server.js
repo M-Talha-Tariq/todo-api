@@ -22,7 +22,9 @@ app.get('/api/v1/todos', async (req, res) => {
       { ip: 0, __v: 0, updatedAt: 0 } // projection (0 wale front per nhi aaye)
       // { todoContent: 1 } saruf todoContent show hoga frontend per aur kuxh show nhi hoga
       // { todoContent: 1, _id: 0 } // advance saruf id ma different keys use ho sagti hy like 0 and 1 
-    ).sort({ _id: -1 })
+    ).sort({ _id : -1 })
+    //).sort({ todoItem: 1 }) // alphabical order
+  // ).sort({ createdAt: 1 }) // record on time base
 
     const message = !todos.lenght ? "todos empty" : "get all todos successfully!"
     res.send({message: message ,data: todos});
